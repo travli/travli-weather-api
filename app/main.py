@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from app.api.routes.weather import router as weather_router
 from app.config import settings
 
 app = FastAPI(
@@ -11,3 +12,6 @@ app = FastAPI(
 @app.get("/health")
 async def health():
     return {"status": "ok"}
+
+
+app.include_router(weather_router)
