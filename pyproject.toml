@@ -1,0 +1,22 @@
+[project]
+name = "travli-weather-api"
+version = "0.1.0"
+description = "Weather API for Travli"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "httpx",
+    "pydantic-settings",
+    "redis",
+    "uvicorn[standard]"
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
