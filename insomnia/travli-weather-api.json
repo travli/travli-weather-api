@@ -1,0 +1,92 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-09-06T10:00:00.000Z",
+  "__export_source": "travli-weather-api",
+  "resources": [
+    {
+      "_id": "wrk_travli_weather",
+      "parentId": null,
+      "modified": 1757152800000,
+      "created": 1757152800000,
+      "name": "travli Weather API",
+      "description": "Requests for travli Weather API",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_travli_weather",
+      "parentId": "wrk_travli_weather",
+      "modified": 1757152800000,
+      "created": 1757152800000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8001"
+      },
+      "dataPropertyOrder": null,
+      "color": null,
+      "_type": "environment"
+    },
+    {
+      "_id": "req_weather_health",
+      "parentId": "wrk_travli_weather",
+      "modified": 1757152800000,
+      "created": 1757152800000,
+      "url": "{{ _.base_url }}/health",
+      "name": "Health",
+      "description": "Check API health",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -2000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_weather",
+      "parentId": "wrk_travli_weather",
+      "modified": 1757152800000,
+      "created": 1757152800000,
+      "url": "{{ _.base_url }}/api/v1/weather",
+      "name": "Get Weather - Bilbao",
+      "description": "Get current and daily weather for Bilbao",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_latitude",
+          "name": "latitude",
+          "value": "43.263",
+          "description": "Latitude",
+          "disabled": false
+        },
+        {
+          "id": "pair_longitude",
+          "name": "longitude",
+          "value": "-2.935",
+          "description": "Longitude",
+          "disabled": false
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    }
+  ]
+}
