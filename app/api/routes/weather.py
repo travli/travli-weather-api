@@ -3,7 +3,6 @@ from fastapi import APIRouter, Query
 from app.schemas.weather import WeatherResponse
 from app.services.weather_service import WeatherService
 
-
 router = APIRouter(
     prefix="/api/v1/weather",
     tags=["weather"],
